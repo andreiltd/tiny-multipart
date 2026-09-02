@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+members = ["fuzz"]
+default-members = ["."]
+
+[package]
+name = "tiny-multipart"
+version = "0.1.0"
+edition = "2024"
+description = "A small, zero-copy multipart/form-data parser"
+repository = "https://github.com/andreiltd/tiny-multipart"
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["multipart", "form-data", "parser", "zero-copy", "http"]
+categories = ["parser-implementations", "web-programming"]
+
+[dependencies]
+winnow = "1.0.4"
+
+[features]
+default = ["simd"]
+capi = []
+simd = ["winnow/simd"]
